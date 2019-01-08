@@ -1,0 +1,1 @@
+del /s C:\Downloads\Others\*.txt

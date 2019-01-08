@@ -1,0 +1,34 @@
+--Definitivo: Baixar direto em avi do youtube/anitube/twitch com melhor qualidade, rapidez e economizando espaço em disco!!!
+
+--comando para pegar a url:
+youtube-dl -f 18 --get-url https://www.youtube.com/watch?v=ZjRlqzWGr20
+
+--usar a url encontrada dentro do ffmpeg
+ffmpeg -i "" -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\Downloads\Yugioh08.avi
+
+--Resultado:
+ffmpeg -i "https://r6---sn-8p8v-bg0r.googlevideo.com/videoplayback?c=WEB&key=yt6&ei=W9_kWq-uNs-uwwSjoafwCw&mn=sn-8p8v-bg0r%2Csn-q4flrnee&mm=31%2C29&ipbits=0&pl=24&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cusequic%2Cexpire&fexp=23724337&usequic=no&id=o-AC-0TQFSQ04ecexDH-AwgBHehnfQiYYoRroHvFxsbcW6&dur=436.558&mv=m&mt=1524948703&ms=au%2Crdu&itag=18&initcwndbps=202500&requiressl=yes&mime=video%2Fmp4&gir=yes&fvip=1&expire=1524970428&ip=191.23.51.230&ratebypass=yes&lmt=1524860128075835&signature=CDCF6FC97E378B2F9170A604E8145B1713F67A39.81D8238EF6539623A212D799234C4EC0207A6A6B&clen=32874461&source=youtube" -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\Downloads\DykgLego.avi
+
+--Anitube
+--Pegando url para usar no FFMPEG
+--para ver todas as urls da pagina
+youtube-dl -f 0 -ci --get-url http://www.anitube.biz/one-piece-episodio-834-o-contra-ataque-dos-piratas-big-mom/
+
+--para vegar só uma
+youtube-dl -f 0 -ci --get-url --playlist-items 1-1 "http://www.anitube.biz/one-piece-episodio-834-o-contra-ataque-dos-piratas-big-mom/"
+
+--URL encontrada:
+http://www.blogger.com/video-play.mp4?contentId=97597772bbae1c3
+
+--usar a url encontrada dentro do ffmpeg
+ffmpeg -i "http://www.blogger.com/video-play.mp4?contentId=97597772bbae1c3" -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\Downloads\Onepiece834.avi
+
+--Baixando um pedaço do video direto em avi
+--comando para pegar a url:
+youtube-dl -f 18 --get-url "https://www.youtube.com/watch?v=hRMX9Rzq1AA&t=7196s"
+
+--usar a url encontrada dentro do ffmpeg
+ffmpeg -i "" -ss 0 -t 7200 -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\Downloads\GOW2.avi
+
+--Resultando em:
+ffmpeg -i "https://r2---sn-8p8v-bg0r.googlevideo.com/videoplayback?requiressl=yes&mime=video%2Fmp4&gir=yes&fvip=2&expire=1525020630&ratebypass=yes&lmt=1524447400485279&mm=31%2C29&ipbits=0&mn=sn-8p8v-bg0r%2Csn-25glen7e&pl=24&usequic=no&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cusequic%2Cexpire&fexp=23724337&id=o-AGPzawTIfaDY7aC02G2TUu-oj8y7VYSRSxMUcOOrYYFj&mt=1524998855&dur=47660.419&mv=m&initcwndbps=211250&ms=au%2Crdu&itag=18&ip=200.171.11.222&c=WEB&key=yt6&ei=dqPlWq7ILYLXxASC8aegBg&signature=1AE241EF9695229F270BF96C989A20AFEFE3304B.C256E50AFEE8B0A899012BA8243CD8B2C52AD92C&clen=4243317332&source=youtube" -ss 0 -t 7200 -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\Downloads\GOW2.avi

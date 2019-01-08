@@ -1,0 +1,113 @@
+Para se baixar legendas
+youtube-dl --write-auto-sub --skip-download --playlist-start 2 "https://www.youtube.com/playlist?list=PL6EC7B047181AD013"
+
+Subtitle Options:
+--write-sub                      Write subtitle file
+--write-auto-sub                 Write automatic subtitle file (YouTube only)
+--all-subs                       Download all the available subtitles of the video
+--list-subs                      List all available subtitles for the video
+--sub-format FORMAT              Subtitle format, accepts formats preference, for example: "srt" or "ass/srt/best"
+--sub-lang LANGS                 Languages of the subtitles to download (optional) separated 
+
+Para ver formatos disponiveis
+
+youtube-dl -F "https://www.youtube.com/watch?v=A0EoLo_MEmA&t=1103s"
+
+Baixar mp3
+youtube-dl --extract-audio --audio-format mp3 --ffmpeg-location C:\Youtube-DL\bin "https://www.youtube.com/watch?v=4XXOPyUs_zU"
+
+Baixar em avi do Youtube:
+youtube-dl -f 18 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin "https://www.youtube.com/watch?v=6EWubLFVgRc"
+
+Baixar em avi do Twitch:
+--Primeiro checar formatos:
+youtube-dl -F "https://www.twitch.tv/videos/236204954"
+--Depois:
+youtube-dl -f 360p -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin "https://www.twitch.tv/videos/236204954"
+
+Baixar em avi do Anitube:
+--Checando video no link:
+youtube-dl -F "http://www.anitube.biz/steinsgate-0-episodio-02/"
+--Baixando de playlist de acordo com o ultimo video..
+youtube-dl -f 0 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin --playlist-start 3 "http://www.anitube.biz/steinsgate-0-episodio-02/"
+--Baixando uma sequencia seguida de episodios
+youtube-dl -f 0 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-04-dentro-de-um-ninha-de-vespas/" && youtube-dl -f 0 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-05-o-ataque-da-traca-gigante/" && youtube-dl -f 0 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-06-o-primeiro-combate/"
+
+Para se baixar Uma playlist
+
+Playlist
+
+youtube-dl -f 18 -ci "https://www.youtube.com/watch?v=G057HbV5u_I&list=PLz4NmdSG1VFvkJNUGRTyGQ6AudMGrpNEi"
+
+AVI
+
+youtube-dl -f 18 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin "https://www.youtube.com/playlist?list=PLgYcvjQqu5W7D12L3oGDz0c19w3BhMkAj"
+
+MP3
+
+youtube-dl --extract-audio --audio-format mp3 --ffmpeg-location C:\Youtube-DL\bin "https://www.youtube.com/playlist?list=PL6fMw0VOHgYNf77A3_ZOxw_3blkXBf3Mo"
+
+//Qualidade melhor AVI
+youtube-dl -f 22 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin "https://www.youtube.com/watch?v=A0EoLo_MEmA&list=PLz4NmdSG1VFtW4HAvPr58O-Y7N7zcMtHt"
+
+...where <url-of-playlist> is replaced by the URL of the playlist and replace FORMAT with any available video format, for example 18.
+
+Playlist video to start at
+
+youtube-dl -f FORMAT -ci --playlist-start NUMBER <url-of-playlist>  
+
+...where <url-of-playlist> is replaced by the URL of the playlist, replace FORMAT with any available video format, for example 18, and NUMBER is the number of the video in the playlist to start downloading first.
+
+Exemplo
+
+youtube-dl -f 18 -ci --playlist-start 3 "https://www.youtube.com/playlist?list=PLz4NmdSG1VFtATlQX25lybk3C_R8bB0b3"
+
+Ex AVI
+youtube-dl -f 18 -ci --recode-video avi --prefer-ffmpeg --ffmpeg-location C:\Youtube-DL\bin --playlist-start 43 "https://www.youtube.com/playlist?list=PLgYcvjQqu5W7D12L3oGDz0c19w3BhMkAj"
+
+Ex MP3
+youtube-dl --extract-audio --audio-format mp3 --ffmpeg-location C:\Youtube-DL\bin --playlist-start 2 "https://www.youtube.com/playlist?list=PLgYcvjQqu5W7D12L3oGDz0c19w3BhMkAj"
+
+
+--Baixar e converter para avi com a melhor qualidade em qualquer servido e.g. Youtube/Twitch/Anitube...
+--Primeiro checar a qualidade porque dependendo do servidor o valor muda:
+youtube-dl -F "https://www.youtube.com/watch?v=A0EoLo_MEmA&t=1103s"
+
+--Baixar o video mudando o nome com o formato padrão, Depois concatenar com o nome escolhido para ser convertido usando o Ffmpeg
+
+--Exemplo com Youtube:
+youtube-dl -f 18 -ci -o ScykohStanley.mp4 "https://www.youtube.com/watch?v=fhrj5yXjEKw" && ffmpeg.exe -i ScykohStanley.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 ScykohStanley.avi
+
+--Exemplo com Anitube
+youtube-dl -f 0 -ci -o HighDxDep3.mp4 -playlist-start 3 "http://www.anitube.biz/high-school-dxd-hero-episodio-01-1/" && ffmpeg.exe -i HighDxDep3.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 HighDxDep3.avi
+
+--Exemplo fazendo com Anitube e Youtube concatenando:
+youtube-dl -f 0 -ci -o HighDxDep3.mp4 --playlist-start 3 "http://www.anitube.biz/high-school-dxd-hero-episodio-01-1/" && ffmpeg.exe -i HighDxDep3.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 HighDxDep3.avi && youtube-dl -f 18 -ci -o ScykohStanley.mp4 "https://www.youtube.com/watch?v=fhrj5yXjEKw" && ffmpeg.exe -i ScykohStanley.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 ScykohStanley.avi
+
+--Exemplo com multiplos Anitubes
+youtube-dl -f 0 -ci -o YugiOhep1.mp4 --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-01-o-coracao-das-cartas/" && ffmpeg.exe -i YugiOhep1.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 YugiOhep1.avi && youtube-dl -f 0 -ci -o YugiOhep2.mp4 --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-02-o-grande-desafio/" && ffmpeg.exe -i YugiOhep2.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 YugiOhep2.avi && youtube-dl -f 0 -ci -o YugiOhep3.mp4 --playlist-start 3 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-03-viagem-ao-reino-dos-duelos/" && ffmpeg.exe -i YugiOhep3.mp4 -c:v mpeg4 -vtag xvid -qscale:v 1 -c:a libmp3lame -qscale:a 4 YugiOhep3.avi
+
+
+--Convertendo para avi na melhor qualidade a partir de um script criado previamente tambem deletando fonte original para evitar futuros conflitos
+
+--Youtube
+youtube-dl -f 18 -ci "https://youtu.be/nnimcgNQuFg" && ConvertingToAviHq.bat && youtube-dl -f 18 -ci "https://www.youtube.com/watch?v=Z6BeAtdoELY" && ConvertingToAviHq.bat
+
+--Youtube Playlist escolhendo video individual
+youtube-dl -f 18 --playlist-items 3-3 "https://www.youtube.com/watch?v=qBNo0zqXsYA&list=PL7RtZMiaOk8j0LeFZQI7ZO3jjZlFTTFRI&index=1" && ConvertingToAviHq.bat
+
+--Twitch
+youtube-dl -f 360p -ci "https://www.twitch.tv/videos/130175473" && ConvertingToAviHq.bat
+
+--Anitube
+youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/boku-no-hero-academia-3-episodio-04-meu-heroi/" && ConvertingToAviHq.bat
+
+--Baixando um pedaço do video
+--comando para pegar a url:
+youtube-dl -f 18 --get-url https://www.youtube.com/watch?v=hRMX9Rzq1AA
+
+--usar a url encontrada dentro do ffmpeg
+ffmpeg -i "" -ss 0 -t 20 -c copy C:\Youtube-DL\Downloads\GOW1.mp4
+
+--Resultando em:
+ffmpeg -i "https://r2---sn-8p8v-bg0r.googlevideo.com/videoplayback?usequic=no&dur=47660.419&initcwndbps=207500&ei=hYfkWsz2Gs6UxQTtvqr4Cg&expire=1524947941&sparams=clen%2Cdur%2Cei%2Cgir%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cusequic%2Cexpire&clen=4243317332&source=youtube&signature=707F6C42916591B2985CE816F7C91F85CAA7EDBF.AEF951CE052E7FAAFF3FFC4648BDE6A82F528C33&ratebypass=yes&c=WEB&lmt=1524447400485279&key=yt6&itag=18&mv=m&fvip=2&mn=sn-8p8v-bg0r%2Csn-q4fl6nlr&mm=31%2C29&pl=24&mime=video%2Fmp4&id=o-ACYEzrT25b1vRm2Vu5ol0VVk7tY3wr8H8iElyYHnMYGE&ipbits=0&requiressl=yes&ip=189.46.240.144&gir=yes&mt=1524926213&ms=au%2Crdu&fexp=23724337" -ss 0 -t 7200 -c copy C:\Youtube-DL\Downloads\GOW1.mp4

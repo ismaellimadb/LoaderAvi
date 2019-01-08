@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main () {
+    char cod;
+    char nome;
+    printf("\n\nInsira o codigo\n");
+    scanf("%s", &cod);
+    printf("\nInsira o nome do arquivo\n");
+    scanf("%s", &nome);
+    printf("\nffmpeg -i \"%s\" -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\\Downloads\\%s.avi\n\n", &cod,&nome);
+	system("pause");
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main () {
+    printf("Insira a url\n");
+    char url[100];
+    gets(url);
+    printf("\nyoutube-dl -f 18 --get-url  %s\n\n", url);
+    
+    printf("Insira o codigo gerado\n\n");
+	char code[100];
+	gets(code);
+    
+	system(code);
+    system("pause");
+}
+
+
+/*#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main () {
+    printf("Insira a url\n");
+    char url[100];
+    gets(url);
+    printf("\nyoutube-dl -f 18 --get-url  %s\n\n", url);
+    
+    char url2[300] = "youtube-dl -f 18 --get-url ";
+    
+	system(code);
+    system("pause");
+}
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+ 
+int main()
+{
+   char a[1000], b[1000] = "youtube-dl -f 18 --get-url ";
+ 
+   printf("Insira a url\n");
+   gets(a);
+ 
+   strcat(b,a);
+ 
+   printf("\n\n%s\n\n",b);
+   
+   system(b);
+   system("pause");
+   
+   return 0;
+}
+
+
+	printf("Insira o codigo anteriormente encontrado\n");
+	char cod[300];
+	gets(cod);
+	
+	printf("\nInsira o nome do arquivo\n");
+    char nome[50];
+    gets(nome);
+        
+    printf("\n\nffmpeg -i \"%s\" -c:v mpeg4 -vtag XVID -b:v 990k -g 300 -s 640x360 -acodec libmp3lame -ab 128k -ar 48000 -ac 2 -threads 0 -f avi C:\\Downloads\\%s.avi\n\n", cod,nome);
+	
+	printf("\n\n Insira o ultimo codigo\n");
+	char cods[500];
+	gets(cods);
+	
+	printf("\n\n%s\n", cods);
+	system(cods);
+	system("pause");

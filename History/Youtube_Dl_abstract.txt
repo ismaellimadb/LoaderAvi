@@ -1,0 +1,19 @@
+--Convertendo para avi na melhor qualidade a partir de um script criado previamente tambem deletando fonte original para evitar futuros conflitos
+
+--Youtube
+youtube-dl -f 18 -ci "https://youtu.be/nnimcgNQuFg" && ConvertingToAviHq.bat && youtube-dl -f 18 -ci "https://www.youtube.com/watch?v=Z6BeAtdoELY" && ConvertingToAviHq.bat
+
+--Youtube Playlist escolhendo video individual
+youtube-dl -f 18 --playlist-items 3-3 "https://www.youtube.com/watch?v=qBNo0zqXsYA&list=PL7RtZMiaOk8j0LeFZQI7ZO3jjZlFTTFRI&index=1" && ConvertingToAviHq.bat
+
+--Twitch
+youtube-dl -f 360p -ci "https://www.twitch.tv/videos/130175473" && ConvertingToAviHq.bat
+
+--Anitube
+youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/steinsgate-0-episodio-03/" && ConvertingToAviHq.bat
+
+--Mistureba
+youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/steinsgate-0-episodio-03/" && ConvertingToAviHq.bat && youtube-dl -f 18 -ci "https://www.youtube.com/watch?v=9RBvH0PEbY0" && ConvertingToAviHq.bat && youtube-dl -f 18 -ci "https://www.youtube.com/watch?v=V1C4U2gN6Oo" && ConvertingToAviHq.bat
+
+--Mistureba Anitube
+youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-04-dentro-de-um-ninha-de-vespas/" && ConvertingToAviHq.bat && youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-05-o-ataque-da-traca-gigante/" && ConvertingToAviHq.bat && youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-06-o-primeiro-combate/" && ConvertingToAviHq.bat && youtube-dl -f 0 -ci --playlist-items 1-1 "http://www.anitube.biz/yu-gi-oh-duel-monsters-episodio-07-ataque-das-profundezas/" && ConvertingToAviHq.bat

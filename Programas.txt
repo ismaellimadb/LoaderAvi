@@ -1,0 +1,13 @@
+cod = download a partir de um codigo
+codt = corta um video de um codigo
+cutt = Corta do Twitch
+cuty = Corta do Youtube
+play = baixa de uma playlist do youtube++
+playd = baixa de uma playlist do youtube--
+playhd = baixa playlist convertendo de hdtv
+playmusic = baixa playlist de musicas do youtube
+rco = baixa a partir de codigos de txts
+twitch = baixa do twiter
+anitu = baixava do anitube
+youtube = baixa do youtube
+youtmp3 = baixa musicas em mp3 do youtube
