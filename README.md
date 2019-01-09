@@ -1,9 +1,9 @@
 # Videos_AVI_Downloader
 
 /*
-No Windows colocar youtube-dl.exe e a pasta bin contendo o FFMPEG no mesmo diretorio de Videos_Avi_Downloader, e colocar o diretório Videos_Avi_Downloader nas variaveis de ambiente do Windows.
+No Windows colocar youtube-dl.exe e a pasta bin contendo o FFMPEG no mesmo diretorio de LoaderAvi, e incluir o diretório LoaderAvi assim como o diretório bin nas variaveis de ambiente do Windows.
 
-O programa foi criado para rodar no Windows, no Linux o Youtube-DL e o FFMPEG deverão ser instalados de acordo com o Sistema Operacional e o diretorio Videos_Avi_Downloader deverá ser colocado no bashrc ou no bash_profile.
+O programa foi criado para rodar no Windows, no Linux o Youtube-DL e o FFMPEG deverão ser instalados de acordo com o Sistema Operacional e o diretorio LoaderAvi assim como o diretório bin deveram ser colocados no bashrc ou no bash_profile.
 */
 
 links:
