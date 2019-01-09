@@ -3,7 +3,7 @@
 /*
 No Windows colocar youtube-dl.exe e a pasta bin contendo o FFMPEG no mesmo diretorio de LoaderAvi, e incluir o diretório LoaderAvi assim como o diretório bin nas variaveis de ambiente do Windows.
 
-O programa foi criado para rodar no Windows, no Linux o Youtube-DL e o FFMPEG deverão ser instalados de acordo com o Sistema Operacional e o diretorio LoaderAvi assim como o diretório bin deveram ser colocados no bashrc ou no bash_profile.
+O programa foi criado para rodar no Windows, no Linux o Youtube-DL e o FFMPEG deverão ser instalados de acordo com o Sistema Operacional e o diretorio LoaderAvi assim como o diretório bin deveram ser colocados no bashrc ou no bash_profile, e os scripts .bat terão de ser convertidos para .sh.
 */
 
 links:
