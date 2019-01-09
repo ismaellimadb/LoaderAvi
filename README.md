@@ -1,4 +1,4 @@
-# Videos_AVI_Downloader
+# LoaderAvi
 
 /*
 No Windows colocar youtube-dl.exe e a pasta bin contendo o FFMPEG no mesmo diretorio de LoaderAvi, e incluir o diretório LoaderAvi assim como o diretório bin nas variaveis de ambiente do Windows.
